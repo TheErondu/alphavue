@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="oB6ch4sB9zv59sFQjEkiB-ZEVMBjgvzIsXIOj0rkqpI" />
     <meta name="csrf-token" content="F1nqjeE2Oaqe2T7LK0HUltAM6g3dCea1g47DPMji">
-    <title>Baron & Cabot | The Best UK Property Investment Opportunities - Baron & Cabot</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Meta -->
     <!-- Page Description Here -->
@@ -91,7 +91,7 @@
 
     <link rel="stylesheet" href="assets/js/intl-tel-input-master/build/css/intlTelInput.css">
 
-
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
