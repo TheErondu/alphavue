@@ -4,26 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fc2e201e06a194053d115d075370909",
+    "content-hash": "29ecafbf0d065da7b9e11fce1f91e274",
     "packages": [
         {
             "name": "binshops/laravel-blog",
-            "version": "v9.3.6",
+            "version": "v8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/binshops/laravel-blog.git",
-                "reference": "e51ee691b7234b2927d4f28301207e70934a415f"
+                "reference": "3ebcd8cb7b41b417a98b897e8913a075498ec778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/binshops/laravel-blog/zipball/e51ee691b7234b2927d4f28301207e70934a415f",
-                "reference": "e51ee691b7234b2927d4f28301207e70934a415f",
+                "url": "https://api.github.com/repos/binshops/laravel-blog/zipball/3ebcd8cb7b41b417a98b897e8913a075498ec778",
+                "reference": "3ebcd8cb7b41b417a98b897e8913a075498ec778",
                 "shasum": ""
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "^10.0|^9.0|~8.0|~7.0|~6.0|~4.8|~4.7|~4.6|~4.5",
                 "intervention/image": "2.*",
-                "laravel/helpers": "^1.3"
+                "laravel/helpers": "^1.3",
+                "swisnl/laravel-fulltext": "^0.22.0"
             },
             "require-dev": {
                 "orchestra/testbench": "4.0.*",
@@ -41,8 +42,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "BinshopsBlog\\": "src",
-                    "BinshopsBlog\\Laravel\\Fulltext\\": "src/FulltextSearch/src/"
+                    "BinshopsBlog\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -76,9 +76,9 @@
             "support": {
                 "docs": "https://github.com/binshops/laravel-blog",
                 "issues": "https://github.com/binshops/laravel-blog/issues",
-                "source": "https://github.com/binshops/laravel-blog/tree/v9.3.6"
+                "source": "https://github.com/binshops/laravel-blog/tree/v8.2.0"
             },
-            "time": "2023-06-07T17:55:40+00:00"
+            "time": "2023-05-18T08:35:00+00:00"
         },
         {
             "name": "brick/math",
@@ -3526,6 +3526,72 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "swisnl/laravel-fulltext",
+            "version": "0.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swisnl/laravel-fulltext.git",
+                "reference": "d2a3eace9efcff40b48252236be5b19f8b7debcb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swisnl/laravel-fulltext/zipball/d2a3eace9efcff40b48252236be5b19f8b7debcb",
+                "reference": "d2a3eace9efcff40b48252236be5b19f8b7debcb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "mockery/mockery": "^1.5",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Swis\\Laravel\\Fulltext\\FulltextServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Swis\\Laravel\\Fulltext\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Björn Brala",
+                    "email": "bbrala@swis.nl",
+                    "homepage": "https://www.swis.nl/over-ons/bjorn-brala",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fulltext indexing and searching for Laravel",
+            "homepage": "https://github.com/swisnl/laravel-fulltext",
+            "keywords": [
+                "laravel-fulltext",
+                "swisnl"
+            ],
+            "support": {
+                "issues": "https://github.com/swisnl/laravel-fulltext/issues",
+                "source": "https://github.com/swisnl/laravel-fulltext/tree/0.22.0"
+            },
+            "time": "2023-02-14T19:43:51+00:00"
         },
         {
             "name": "symfony/console",
