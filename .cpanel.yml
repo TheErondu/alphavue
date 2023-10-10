@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/dzsbsclp/public_html/
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R build $DEPLOYPATH
+    - /bin/cp -R core $DEPLOYPATH
+    - /bin/cp  .htacess $DEPLOYPATH
+    - /bin/cp  favicon.ico $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp  manifest.json $DEPLOYPATH
+    - /bin/cp  robots.txt $DEPLOYPATH
