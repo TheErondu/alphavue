@@ -1,3 +1,4 @@
+@include('layouts.breadcrumbs')
 @if(\Auth::check() && \Auth::user()->canManageBinshopsBlogPosts())
     <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right">Edit
         Post</a>
@@ -23,7 +24,7 @@
 
 <hr/>
 
-Posted <strong>{{$post->post->posted_at->diffForHumans()}}</strong>
+Posted <strong>{{$post->posted_at}}</strong>
 
 @includeWhen($post->author,"binshopsblog::partials.author",['post'=>$post])
-@includeWhen($categories,"binshopsblog::partials.categories",['categories'=>$categories])
+{{-- @includeWhen($categories,"binshopsblog::partials.categories",['categories'=>$categories]) --}}

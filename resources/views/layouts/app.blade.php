@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="oB6ch4sB9zv59sFQjEkiB-ZEVMBjgvzIsXIOj0rkqpI" />
     <meta name="csrf-token" content="F1nqjeE2Oaqe2T7LK0HUltAM6g3dCea1g47DPMji">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $title??config('app.name', 'Laravel') }}</title>
 
     <!-- Meta -->
     <!-- Page Description Here -->
@@ -47,20 +47,20 @@
     <meta property="article:published_time" content="2022-07-27 08:18:17" />
     <meta property="article:modified_time" content="2023-08-10 08:18:19" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
     <link rel="canonical" href="index.html" />
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicons/ms-icon-144x144.png">
@@ -74,22 +74,22 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
 
     <!-- range slider css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery-ui.css">
 
     <!-- animate css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
 
     <!-- Template css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/color1.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/color1.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/fontawesome/css/all.min.css">
 
     <!-- lightbox -->
-    <link href="assets/js/lightbox/src/css/lightbox.css" rel="stylesheet" />
-    <link href="assets/css/fancybox.min.css" rel="stylesheet" />
+    <link href="/assets/js/lightbox/src/css/lightbox.css" rel="stylesheet" />
+    <link href="/assets/css/fancybox.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/js/intl-tel-input-master/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="/assets/js/intl-tel-input-master/build/css/intlTelInput.css">
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -360,56 +360,56 @@
 
 
     <!-- latest jquery-->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
 
     <!-- popper js-->
-    <script src="assets/js/popper.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
 
     <!-- magnific js -->
 
 
     <!-- Bootstrap js-->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
     <!-- video js-->
-    <script src="assets/js/jquery.vide.min.js"></script>
+    <script src="/assets/js/jquery.vide.min.js"></script>
 
     <!-- range slider js -->
 
 
     <!-- feather icon js-->
-    <script src="assets/js/feather-icon/feather.min.js"></script>
-    <script src="assets/js/feather-icon/feather-icon.js"></script>
+    <script src="/assets/js/feather-icon/feather.min.js"></script>
+    <script src="/assets/js/feather-icon/feather-icon.js"></script>
 
     <!-- slick js -->
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/slick-animation.min.js"></script>
-    <script src="assets/js/custom-slick.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/slick-animation.min.js"></script>
+    <script src="/assets/js/custom-slick.js"></script>
 
     <!-- notify js -->
-    <script src="assets/js/bootstrap-notify.min.js"></script>
+    <script src="/assets/js/bootstrap-notify.min.js"></script>
 
     <!-- wow js-->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
 
     <!-- Template js-->
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 
     <!-- Customizer js-->
-    <script src="assets/js/customizer.js"></script>
+    <script src="/assets/js/customizer.js"></script>
 
     <!-- Color-picker js-->
-    <script src="assets/js/color/layout3.js"></script>
+    <script src="/assets/js/color/layout3.js"></script>
 
-    <script src="assets/js/fancybox.min.js"></script>
+    <script src="/assets/js/fancybox.min.js"></script>
 
 
 
     <!-- fancy slider js -->
-    <script src="assets/js/fancy-slider.js"></script>
+    <script src="/assets/js/fancy-slider.js"></script>
 
     <!-- Color-picker js-->
-    <script src="assets/js/color/layout5.js"></script>
+    <script src="/assets/js/color/layout5.js"></script>
 
     <script>
         function refreshPage() {
@@ -418,14 +418,14 @@
     </script>
 
     <!-- ================== toastr ================== -->
-    <link href="assets/js/toastr/build/toastr.css" rel="stylesheet" />
-    <script src="assets/js/toastr/build/toastr.min.js"></script>
+    <link href="/assets/js/toastr/build/toastr.css" rel="stylesheet" />
+    <script src="/assets/js/toastr/build/toastr.min.js"></script>
 
 
 
     <!-- select 2 -->
-    <link href="assets/js/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="assets/js/select2/dist/js/select2.min.js"></script>
+    <link href="/assets/js/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="/assets/js/select2/dist/js/select2.min.js"></script>
     <script>
         $('.select2').select2({
             width: '100%',
@@ -434,7 +434,7 @@
     </script>
 
     <!-- Use as a Vanilla JS plugin -->
-    <script src="assets/js/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
+    <script src="/assets/js/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
     <script>
         var input = document.querySelector("#phone"),
             errorMsg = document.querySelector("#error-msg"),
@@ -492,7 +492,7 @@
     </script>
 
 
-    <script src="livewire/livewire4a5a.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false">
+    <script src="/assets/livewire/livewire4a5a.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false">
     </script>
     <script data-turbo-eval="false" data-turbolinks-eval="false">
         window.livewire = new Livewire();
@@ -592,7 +592,7 @@
 
 
     <!-- lazyload js-->
-    <script src="assets/js/lazysizes/lazysizes.min.js" async=""></script>
+    <script src="/assets/js/lazysizes/lazysizes.min.js" async=""></script>
     <!-- Start of ChatBot (www.chatbot.com) code -->
     <script type="text/javascript">
         window.__be = window.__be || {};

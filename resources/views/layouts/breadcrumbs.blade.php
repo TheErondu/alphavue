@@ -1,6 +1,6 @@
                <!-- breadcrumb start -->
                <section class="breadcrumb-section p-0">
-                <img src="assets/images/inner-background.jpg" class="bg-img img-fluid" alt="title image">
+                <img src="/assets/images/inner-background.jpg" class="bg-img img-fluid" alt="title image">
                 <div class="container">
                    <div class="breadcrumb-content">
                       <div>

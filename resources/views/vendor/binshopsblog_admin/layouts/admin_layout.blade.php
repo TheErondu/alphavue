@@ -99,7 +99,7 @@
                     @if (Route::is('admin.home.*'))
                     @include("binshopsblog_admin::layouts.sidebar-home")
                     @endif
-                    @if (Route::is('admin.posts.*'))
+                    @if (Route::is('binshopsblog.*'))
                     @include("binshopsblog_admin::layouts.sidebar-blog")
                     @endif
                     <div class=' list-group-color text-center mt-5 mb-3 text-muted binshops-version'>

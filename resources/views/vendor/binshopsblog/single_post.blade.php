@@ -14,10 +14,6 @@
 
     {{--https://github.com/binshops/laravel-blog--}}
 
-    <div class='container'>
-    <div class='row'>
-        <div class='col-sm-12 col-md-12 col-lg-12'>
-
             @include("binshopsblog::partials.show_errors")
             @include("binshopsblog::partials.full_post_details")
 
@@ -32,9 +28,6 @@
             @endif
 
 
-        </div>
-    </div>
-    </div>
 
 @endsection
 
