@@ -1,9 +1,5 @@
 @extends("layouts.app",['title'=>$post->gen_seo_title()])
 
-@section('blog-custom-css')
-    <link type="text/css" href="{{ asset('binshops-blog.css') }}" rel="stylesheet">
-@endsection
-
 @section("content")
 
     @if(config("binshopsblog.reading_progress_bar"))
@@ -29,8 +25,4 @@
 
 
 
-@endsection
-
-@section('blog-custom-js')
-    <script src="{{asset('binshops-blog.js')}}"></script>
 @endsection

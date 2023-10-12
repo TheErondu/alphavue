@@ -1,4 +1,4 @@
-@include('layouts.breadcrumbs')
+
 @if(\Auth::check() && \Auth::user()->canManageBinshopsBlogPosts())
     <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right">Edit
         Post</a>

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="oB6ch4sB9zv59sFQjEkiB-ZEVMBjgvzIsXIOj0rkqpI" />
     <meta name="csrf-token" content="F1nqjeE2Oaqe2T7LK0HUltAM6g3dCea1g47DPMji">
-    <title>{{ $title??config('app.name', 'Laravel') }}</title>
+    <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
     <!-- Meta -->
     <!-- Page Description Here -->
@@ -90,17 +90,11 @@
     <link href="/assets/css/fancybox.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="/assets/js/intl-tel-input-master/build/css/intlTelInput.css">
-
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
-
-    <!-- TrustBox script -->
-    <script type="text/javascript" src="../widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.html" async></script>
-    <!-- End TrustBox script -->
 
     <style>
         .iti.iti--allow-dropdown.iti--separate-dial-code {
@@ -191,85 +185,21 @@
         }
     </style>
 
-    <!-- Meta Pixel Code -->
-    <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            '../connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '400315665571328');
-        fbq('track', 'PageView');
-        fbq('track', 'Contact');
-        fbq('track', 'CompleteRegistration');
-        fbq('track', 'SubmitApplication');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=400315665571328&amp;ev=PageView&amp;noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W4LL3C9');
-    </script>
-    <!-- End Google Tag Manager -->
 
-    <!-- Hotjar Tracking Code for https://www.baroncabot.com -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 2958085,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
+
+
 
 </head>
 
 <body>
-    <!-- Loader start -->
-
-    <!-- Loader end -->
 
     <!-- header start -->
     @include('layouts.header')
+    @if (Route::currentRouteName())
 
+    @endif
+    @include('layouts.breadcrumbs')
     <main class="py-4">
         @yield('content')
     </main>
@@ -277,14 +207,6 @@
     <!-- footer start -->
     @include('layouts.footer')
     <!-- footer end -->
-    <!-- footer end -->
-
-
-
-    <!-- tap to top start -->
-
-    <!-- tap to top end -->
-
 
     <!-- getMoreInfo -->
     <div class="modal fade" id="getMoreInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
@@ -353,12 +275,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Start of LiveChat (www.livechat.com) code -->
-
-    <!-- End of LiveChat code -->
-
-
     <!-- latest jquery-->
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
 
@@ -420,9 +336,6 @@
     <!-- ================== toastr ================== -->
     <link href="/assets/js/toastr/build/toastr.css" rel="stylesheet" />
     <script src="/assets/js/toastr/build/toastr.min.js"></script>
-
-
-
     <!-- select 2 -->
     <link href="/assets/js/select2/dist/css/select2.min.css" rel="stylesheet" />
     <script src="/assets/js/select2/dist/js/select2.min.js"></script>
@@ -492,8 +405,8 @@
     </script>
 
 
-    <script src="/assets/livewire/livewire4a5a.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false">
-    </script>
+    <script src="/assets/livewire/livewire4a5a.js?id=90730a3b0e7144480175" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
     <script data-turbo-eval="false" data-turbolinks-eval="false">
         window.livewire = new Livewire();
         window.Livewire = window.livewire;
@@ -584,30 +497,9 @@
 
 
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4LL3C9" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-
 
     <!-- lazyload js-->
     <script src="/assets/js/lazysizes/lazysizes.min.js" async=""></script>
-    <!-- Start of ChatBot (www.chatbot.com) code -->
-    <script type="text/javascript">
-        window.__be = window.__be || {};
-        window.__be.id = "64692f10c9a421000737001c";
-        (function() {
-            var be = document.createElement('script');
-            be.type = 'text/javascript';
-            be.async = true;
-            be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +
-                'cdn.chatbot.com/widget/plugin.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(be, s);
-        })();
-    </script>
-    <!-- End of ChatBot code -->
 </body>
 
 <!-- Mirrored from baroncabot.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Sep 2023 10:25:02 GMT -->
