@@ -1,80 +1,84 @@
-@extends("layouts.app",['title'=>$title])
-
-@section('blog-custom-css')
-    <link type="text/css" href="{{ asset('binshops-blog.css') }}" rel="stylesheet">
-@endsection
-
-@section("content")
-
-    <div class='col-sm-12 binshopsblog_container'>
-        @if(\Auth::check() && \Auth::user()->canManageBinshopsBlogPosts())
-            <div class="text-center">
-                <p class='mb-1'>You are logged in as a blog admin user.
-                    <br>
-                    <a href='{{route("binshopsblog.admin.index")}}'
-                       class='btn border  btn-outline-primary btn-sm '>
-                        <i class="fa fa-cogs" aria-hidden="true"></i>
-                        Go To Blog Admin Panel</a>
-                </p>
-            </div>
-        @endif
-
-        <div class="row">
-            <div class="col-md-9">
-
-                @if($category_chain)
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                @forelse($category_chain as $cat)
-                                    / <a href="{{$cat->categoryTranslations[0]->url($locale)}}">
-                                        <span class="cat1">{{$cat->categoryTranslations[0]['category_name']}}</span>
-                                    </a>
-                                @empty @endforelse
-                            </div>
+@extends('layouts.app')
+@section('content')
+   <!-- blog section start-->
+   <section class="ratio_landscape blog-list-section">
+      <div class="container">
+         <div wire:id="lMrZctW4ogwi2T8TWOpM" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;lMrZctW4ogwi2T8TWOpM&quot;,&quot;name&quot;:&quot;blog&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;blog&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;37e991ae&quot;,&quot;data&quot;:{&quot;search&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;567142a1f4b42e9dac12ce5f72eb3e9e693289828848832161be8ea7b5c31322&quot;}}" class="row">
+   <div class="col-xl-9 col-lg-8">
+      <div class="blog-grid row mt-0">
+        @forelse($posts as $post)
+                     <div class="col-md-6">
+               <div class="blog-wrap wow fadeInUp">
+                  <div class="blog-image">
+                    <?=$post->image_tag("medium", true, ''); ?>
+                     <div class="blog-label">
+                        <div>
+                           <h3>{{date('d', strtotime($post->posted_at))}}</h3>
+                           <span>{{date('M', strtotime($post->posted_at))}}</span>
                         </div>
-                    </div>
-                @endif
-
-                @if(isset($binshopsblog_category) && $binshopsblog_category)
-                    <h2 class='text-center'> {{$binshopsblog_category->category_name}}</h2>
-
-                    @if($binshopsblog_category->category_description)
-                        <p class='text-center'>{{$binshopsblog_category->category_description}}</p>
-                    @endif
-
-                @endif
-
-                <div class="container">
-                    <div class="row">
-                        @forelse($posts as $post)
-                            @include("binshopsblog::partials.index_loop")
-                        @empty
-                            <div class="col-md-12">
-                                <div class='alert alert-danger'>No posts!</div>
-                            </div>
-                        @endforelse
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h6>Blog Categories</h6>
-                <ul class="binshops-cat-hierarchy">
-                    @if($categories)
-                        @include("binshopsblog::partials._category_partial", [
-    'category_tree' => $categories,
-    'name_chain' => $nameChain = "",
-    ])
+                     </div>
+                  </div>
+                  <div class="blog-details">
+                                          <div>
+                        <h3>
+                           <a  href="{{$post->url()}}" rel="canonical" >{{$post->title}}</a>
+                        </h3>
+                        @if (config('binshopsblog.show_full_text_at_list'))
+                        <p class="font-roboto">{!! $post->post_body_output() !!}</p>
                     @else
-                        <span>No Categories</span>
+                        <p class="font-roboto">{!! mb_strimwidth($post->post_body_output(), 0, 400, "...") !!}</p>
                     @endif
-                </ul>
+                        <a  href="{{$post->url()}}" rel="canonical" >read more</a>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
+            @empty
+            <div class="col-md-12">
+                <div class='alert alert-danger'>No posts!</div>
+            </div>
+        @endforelse
 
-        @if (config('binshopsblog.search.search_enabled') )
-            @include('binshopsblog::sitewide.search_form')
-        @endif
-    </div>
+               </div>
 
+   </div>
+   <div class="col-xl-3 col-lg-4">
+      <div class="sticky-cls blog-sidebar blog-right">
+         <div class="filter-cards">
+            <div class="advance-card mb-5">
+               <div class="search-bar">
+                  <input type="text" placeholder="Search here.." wire:model="search">
+                  <i class="fas fa-search"></i>
+               </div>
+            </div>
+
+            <div class="advance-card mb-5">
+               <h6>Category</h6>
+               <div class="category-property">
+                  <ul>
+                                             <li>
+                           <a href="https://baroncabot.com/blog/insights/category">
+                              <i class="fas fa-arrow-right me-2"></i>Insights
+
+                           </a>
+                        </li>
+                                             <li>
+                           <a href="https://baroncabot.com/blog/news/category">
+                              <i class="fas fa-arrow-right me-2"></i>News
+
+                           </a>
+                        </li>
+                                       </ul>
+               </div>
+            </div>
+
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Livewire Component wire-end:lMrZctW4ogwi2T8TWOpM -->      </div>
+   </section>
+   <!-- blog section end-->
 @endsection

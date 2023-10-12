@@ -196,14 +196,10 @@
 
     <!-- header start -->
     @include('layouts.header')
-    @if (Route::currentRouteName())
-
-    @endif
+    @if (!Route::is('main'))
     @include('layouts.breadcrumbs')
-    <main class="py-4">
-        @yield('content')
-    </main>
-
+    @endif
+    @yield('content')
     <!-- footer start -->
     @include('layouts.footer')
     <!-- footer end -->
