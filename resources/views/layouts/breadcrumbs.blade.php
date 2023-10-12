@@ -4,11 +4,11 @@
                 <div class="container">
                    <div class="breadcrumb-content">
                       <div>
-                         <h1 class="text-white">Our Projects</h1>
+                         <h1 class="text-white"> Blog</h1>
                          <nav aria-label="breadcrumb" class="theme-breadcrumb">
                             <ol class="breadcrumb">
                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                               <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                               <li class="breadcrumb-item active" aria-current="page">Blog</li>
                             </ol>
                          </nav>
                       </div>

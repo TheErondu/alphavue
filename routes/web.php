@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('main');
+Route::resource('projects',"App\\Http\\Controllers\\ProjectController");
 
 Auth::routes();
-
 
 //AdminRoutes
 Route::prefix('admin')->group(function () {

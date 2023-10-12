@@ -1,30 +1,60 @@
+<!-- blog details section start-->
+<section class="ratio_40">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8">
+                <div class="blog-single-detail theme-card" style="background-color: white;">
+                    <center>
+                        <img src="https://cms.baroncabot.com/media/posts/PnvKdm.jpg" class="img-responsive"
+                            alt="The Top 10 UK Investment Property Books: Complete 2023 Guide" style="width:100%">
+                    </center>
+                    <div class="blog-title">
+                        <ul class="post-detail">
+                            <li>{{ \Carbon\Carbon::parse($post->posted_at)->format('F jS, Y') }}</li>
+                            @if (\Auth::check() && \Auth::user()->canManageBinshopsBlogPosts())
+                                <li><a href="{{ $post->edit_url() }}">Edit
+                                        Post</a></li>
+                            @endif
 
-@if(\Auth::check() && \Auth::user()->canManageBinshopsBlogPosts())
-    <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right">Edit
-        Post</a>
-@endif
+                        </ul>
+                        <h3>{{ $post->title }}</h3>
+                    </div>
+                    <div class="details-property description">
+                        <div class="row">
+                            {!! $post->post_body_output() !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4">
+                <div class="sticky-cls blog-sidebar blog-right">
+                    <div class="filter-cards">
 
-<h1 class='blog_title'>{{$post->title}}</h1>
-<h5 class='blog_subtitle'>{{$post->subtitle}}</h5>
+
+                        <div class="advance-card mb-5">
+                            <h6>Category</h6>
+                            <div class="category-property">
+                                <ul>
+                                    <li>
+                                        <a href="https://baroncabot.com/blog/insights/category"><i
+                                                class="fas fa-arrow-right me-2"></i>Insights
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://baroncabot.com/blog/news/category"><i
+                                                class="fas fa-arrow-right me-2"></i>News
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
 
-<?=$post->image_tag("medium", false, 'd-block mx-auto'); ?>
-
-<p class="blog_body_content">
-    {!! $post->post_body_output() !!}
-
-    {{--@if(config("binshopsblog.use_custom_view_files")  && $post->use_view_file)--}}
-    {{--                                // use a custom blade file for the output of those blog post--}}
-    {{--   @include("binshopsblog::partials.use_view_file")--}}
-    {{--@else--}}
-    {{--   {!! $post->post_body !!}        // unsafe, echoing the plain html/js--}}
-    {{--   {{ $post->post_body }}          // for safe escaping --}}
-    {{--@endif--}}
-</p>
-
-<hr/>
-
-Posted <strong>{{$post->posted_at}}</strong>
-
-@includeWhen($post->author,"binshopsblog::partials.author",['post'=>$post])
-{{-- @includeWhen($categories,"binshopsblog::partials.categories",['categories'=>$categories]) --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
