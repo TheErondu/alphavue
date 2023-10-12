@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateBinshopsUploadedPhotosTable extends Migration
+class CreateBinshopsBlogUploadedPhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateBinshopsUploadedPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('binshops_uploaded_photos', function (Blueprint $table) {
+        Schema::create('binshops_blog_uploaded_photos', function (Blueprint $table) {
             $table->increments('id');
             $table->text("uploaded_images")->nullable();
             $table->string("image_title")->nullable();
             $table->string("source")->default("unknown");
             $table->unsignedInteger("uploader_id")->nullable()->index();
             $table->timestamps();
+        });
+        Schema::table("binshops_blog_posts",function(Blueprint $table) {
+            $table->string("seo_title")->nullable();
         });
     }
 
@@ -30,6 +33,10 @@ class CreateBinshopsUploadedPhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('binshops_uploaded_photos');
+        Schema::dropIfExists('binshops_blog_uploaded_photos');
+
+        Schema::table("binshops_blog_posts",function(Blueprint $table) {
+            $table->dropColumn("seo_title");
+        });
     }
 }

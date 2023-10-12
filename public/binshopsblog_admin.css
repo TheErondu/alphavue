@@ -10477,64 +10477,43 @@ body {
 .nav-bar-full {
     height: 100% !important;
 }
+/* Dark mode compatible colors */
+.nav {
+    background-color: #333; /* Dark background color for the menu */
+    color: #fff; /* Light text color for menu items */
+}
 
-.wtree li {
-    list-style-type: none;
-    margin: 10px 0 10px 10px;
+.nav-link {
+    color: #fff; /* Light text color for top-level links */
+}
+
+/* Style the dropdown trigger */
+.nav-item {
     position: relative;
 }
 
-.wtree li:before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -20px;
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    width: 20px;
-    height: 15px;
-}
-
-.wtree li:after {
-    position: absolute;
-    content: "";
-    top: 5px;
-    left: -20px;
-    border-left: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    width: 20px;
-    height: 100%;
-}
-
-.wtree li:last-child:after {
+.submenu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444; /* Dark background color for the submenu */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for a dropdown effect */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1; /* Ensure the submenu appears above other content */
 }
 
-.wtree li span {
+.submenu li {
+    padding: 10px;
+}
+
+.submenu li:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+/* Style the top-level link on hover */
+.nav-item:hover .submenu {
     display: block;
-    border: 1px solid #ddd;
-    padding: 5px;
-    color: #888;
-    text-decoration: none;
-}
-
-.wtree li span:hover,
-.wtree li span:focus {
-    background: #eee;
-    color: #000;
-    border: 1px solid #aaa;
-}
-
-.wtree li span:hover+ul li span,
-.wtree li span:focus+ul li span {
-    background: #eee;
-    color: #000;
-    border: 1px solid #aaa;
-}
-
-.wtree li span:hover+ul li:after,
-.wtree li span:hover+ul li:before,
-.wtree li span:focus+ul li:after,
-.wtree li span:focus+ul li:before {
-    border-color: #aaa;
 }
