@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Blog Admin - {{ config('app.name', 'Laravel') }}</title>
+    <title> Admin - {{ config('app.name', 'Laravel') }}</title>
 
 
     <!-- jQuery is only used for hide(), show() and slideDown(). All other features use vanilla JS -->
@@ -58,8 +58,8 @@
                     <li class='nav-item px-2'>
                         <a class='nav-link' href='{{route("main")}}'>Manage Site Pages</a>
                         <ul class="submenu">
-                            <li><a href='#'>Homepage</a></li>
-                            <li><a href='#'>Projects</a></li>
+                            <li><a href='{{ route('admin.home.index')}}'>Homepage</a></li>
+                            <li><a href='{{ route('admin.projects.index')}}'>Projects</a></li>
                             <li><a href='#'>Services</a></li>
                             <li><a href='#'>Team</a></li>
                             <li><a href='#'>Contact Us</a></li>
@@ -97,11 +97,17 @@
             <div class='row full-width-div nav-bar-full'>
                 <div class='list-group-color'>
                     @if (Route::is('admin.home.*'))
-                    @include("binshopsblog_admin::layouts.sidebar-home")
+                    @include("admin.layouts.sidebars.sidebar-home")
                     @endif
                     @if (Route::is('binshopsblog.*'))
-                    @include("binshopsblog_admin::layouts.sidebar-blog")
+                    @include("binshopsblog_admin::layouts.sidebar")
                     @endif
+                    @if (Route::is('admin.projects.*'))
+                    @include("admin.layouts.sidebars.sidebar-projects")
+                    @endif
+                    {{-- @if (Route::is('binshopsblog.*'))
+                    @include("binshopsblog_admin::layouts.sidebars.sidebar-blog")
+                    @endif --}}
                     <div class=' list-group-color text-center mt-5 mb-3 text-muted binshops-version'>
                         <small><a href='https://github.com/vbinshops/laravel-blogger'>Binshops Blog</a></small>
 
@@ -139,7 +145,7 @@
     </main>
 </div>
 
-@if( config("binshopsblog.use_wysiwyg") && config("binshopsblog.echo_html") && (in_array( \Request::route()->getName() ,[ 'binshopsblog.admin.create_post' , 'binshopsblog.admin.edit_post'  ])))
+@if( config("binshopsblog.use_wysiwyg") && config("binshopsblog.echo_html") && (in_array( \Request::route()->getName() ,[ 'binshopsblog.admin.create_post' , 'binshopsblog.admin.edit_post','admin.projects.create', 'admin.projects.edit'  ])))
     <script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
     <script>
         if( typeof(CKEDITOR) !== "undefined" ) {

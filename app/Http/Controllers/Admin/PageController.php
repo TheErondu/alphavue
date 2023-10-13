@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\OurServices;
+use App\Http\Controllers\Controller;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
-class OurServicesController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function contact()
     {
         //
     }
@@ -18,7 +19,7 @@ class OurServicesController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function about()
     {
         //
     }
@@ -34,7 +35,7 @@ class OurServicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OurServices $ourServices)
+    public function show(Page $page)
     {
         //
     }
@@ -42,7 +43,7 @@ class OurServicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurServices $ourServices)
+    public function edit(Page $page)
     {
         //
     }
@@ -50,7 +51,7 @@ class OurServicesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OurServices $ourServices)
+    public function update(Request $request, Page $page)
     {
         //
     }
@@ -58,7 +59,7 @@ class OurServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OurServices $ourServices)
+    public function destroy(Page $page)
     {
         //
     }

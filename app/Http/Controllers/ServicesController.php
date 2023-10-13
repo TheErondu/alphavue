@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Models\Services;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function contact()
+    public function index()
     {
         //
     }
@@ -18,7 +18,7 @@ class PageController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function about()
+    public function create()
     {
         //
     }
@@ -34,7 +34,7 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Page $page)
+    public function show(Services $ourServices)
     {
         //
     }
@@ -42,7 +42,7 @@ class PageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Page $page)
+    public function edit(Services $ourServices)
     {
         //
     }
@@ -50,7 +50,7 @@ class PageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, Services $ourServices)
     {
         //
     }
@@ -58,7 +58,7 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Page $page)
+    public function destroy(Services $ourServices)
     {
         //
     }

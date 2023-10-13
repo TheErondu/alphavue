@@ -4,9 +4,9 @@
             <div class="col">
                 <div class="menu">
                     <div class="brand-logo">
-                        <a href="index.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="104" height="50"
-                                viewBox="0 0 104 50" fill="none">
+                        <a href="{{ route('main') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="104" height="50" viewBox="0 0 104 50"
+                                fill="none">
                                 <path
                                     d="M15.4313 12.8103C17.7184 13.3523 19.3244 14.0081 20.2492 14.7779C21.5761 15.8725 22.2397 17.2924 22.2402 19.0375C22.2402 20.8789 21.5113 22.4011 20.0535 23.6043C18.264 25.061 15.6624 25.7891 12.2488 25.7886H0V25.1206C1.11386 25.1206 1.86939 25.0153 2.26657 24.8048C2.66376 24.5943 2.94222 24.3207 3.10197 23.9839C3.26215 23.6466 3.34225 22.8161 3.34225 21.4924V5.60849C3.34225 4.28433 3.26215 3.45097 3.10197 3.10841C2.94179 2.76584 2.66048 2.49197 2.25806 2.28679C1.85477 2.08294 1.10208 1.98057 0 1.97968V1.31494H11.5555C14.317 1.31494 16.2726 1.56466 17.4222 2.0641C18.5719 2.56354 19.4786 3.3096 20.1425 4.30228C20.8055 5.29495 21.1372 6.35078 21.1377 7.46976C21.1377 8.64989 20.7169 9.69996 19.8754 10.62C19.0339 11.54 17.5525 12.2701 15.4313 12.8103ZM8.96023 13.7309V21.5828L8.94255 22.4855C8.94255 23.1348 9.10536 23.6251 9.43096 23.9566C9.75656 24.2881 10.2395 24.4536 10.8798 24.4532C11.7926 24.4616 12.6934 24.2415 13.5025 23.8124C14.2892 23.3982 14.9315 22.7484 15.3422 21.9511C15.7691 21.1388 15.9825 20.2332 15.9825 19.2343C15.9825 18.091 15.7207 17.065 15.1969 16.1566C14.6731 15.2481 13.956 14.6133 13.0456 14.2521C12.1351 13.894 10.7733 13.7203 8.96023 13.7309ZM8.96023 12.323C10.6428 12.323 11.8841 12.1305 12.6842 11.7454C13.4842 11.3603 14.0977 10.8187 14.5245 10.1207C14.9514 9.42276 15.1648 8.53223 15.1648 7.44915C15.1648 6.36607 14.9544 5.47975 14.5337 4.7902C14.1125 4.09842 13.5108 3.57195 12.7287 3.21078C11.9465 2.8496 10.6904 2.67522 8.96023 2.68763V12.323Z"
                                     fill="white"></path>
@@ -55,11 +55,11 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="projects.html" class="nav-link menu-title">Projects</a>
+                                        <a href="{{ route('projects.index') }}" class="nav-link menu-title">Projects</a>
 
                                     </li>
                                     <li>
-                                        <a href="services.html" class="nav-link menu-title">Services</a>
+                                        <a href="{{ route('services.index') }}" class="nav-link menu-title">Services</a>
 
                                     </li>
                                     <li class="dropdown">
@@ -67,26 +67,26 @@
 
                                         <ul class="nav-submenu menu-content">
                                             <li>
-                                                <a href="about/who-we-are.html">Who we are</a>
+                                                <a href="{{ route('about.who-we-are') }}">Who we are</a>
                                             </li>
                                             <li>
-                                                <a href="about/due-diligence.html">Due Diligence</a>
+                                                <a href="{{ route('about.due-diligence') }}">Due Diligence</a>
                                             </li>
                                             <li>
-                                                <a href="about/faqs.html">Faq's</a>
+                                                <a href="{{ route('about.faqs') }}">Faq's</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="our-team.html" class="nav-link menu-title">Our Team</a>
+                                        <a href="{{ route('team.index') }}" class="nav-link menu-title">Our Team</a>
 
                                     </li>
                                     <li>
-                                        <a href="blog.html" class="nav-link menu-title">Blog</a>
+                                        <a href="{{ route('binshopsblog.index') }}" class="nav-link menu-title">Blog</a>
 
                                     </li>
                                     <li>
-                                        <a href="contacts.html" class="nav-link menu-title">Contacts</a>
+                                        <a href="{{ route('about.contact') }}" class="nav-link menu-title">Contacts</a>
 
                                     </li>
 
