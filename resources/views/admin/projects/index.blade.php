@@ -24,8 +24,8 @@
                 <dl class="">
                     <dt class="">Author</dt>
                     {{-- <dd class="">{{$project->author_string()}}</dd> --}}
-                    <dt class="">projected at</dt>
-                    <dd class="">{{$project->created_at}}</dd>
+                    <dt class="">added at</dt>
+                    <dd class="">{{ \Carbon\Carbon::parse($project->created_at)->format('F jS, Y') }}</dd>
 
 
 
@@ -43,7 +43,7 @@
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     Edit project</a>
                 <form onsubmit="return confirm('Are you sure you want to delete this blog project?\n You cannot undo this action!');"
-                      method='project' action='{{route("admin.projects.destroy", $project->id)}}' class='float-right'>
+                      method='post' action='{{route("admin.projects.destroy", $project->id)}}' class='float-right'>
                     @csrf
                     <input name="_method" type="hidden" value="DELETE"/>
                     <button type='submit' class='btn btn-danger btn-sm'>

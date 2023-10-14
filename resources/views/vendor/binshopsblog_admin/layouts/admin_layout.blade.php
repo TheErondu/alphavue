@@ -62,6 +62,7 @@
                             <li><a href='{{ route('admin.projects.index')}}'>Projects</a></li>
                             <li><a href='#'>Services</a></li>
                             <li><a href='#'>Team</a></li>
+                            <li><a href='{{ route('binshopsblog.admin.index')}}'>Blog</a></li>
                             <li><a href='#'>Contact Us</a></li>
                             <li><a href='#'>About</a></li>
                         </ul>

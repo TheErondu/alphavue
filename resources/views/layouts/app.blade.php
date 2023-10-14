@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from baroncabot.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Sep 2023 10:24:05 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -197,7 +193,7 @@
     <!-- header start -->
     @include('layouts.header')
     @if (!Route::is('main'))
-    @include('layouts.breadcrumbs')
+        @include('layouts.breadcrumbs')
     @endif
     @yield('content')
     <!-- footer start -->
