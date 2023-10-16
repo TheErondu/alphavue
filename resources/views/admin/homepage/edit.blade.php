@@ -1,19 +1,14 @@
-@extends("binshopsblog_admin::layouts.admin_layout")
-@section("content")
+@extends('binshopsblog_admin::layouts.admin_layout')
+@section('content')
+    <h5>Admin - Make changes to the Homepage </h5>
 
-
-    <h5>Admin - Make changes to the Homepage
-    <a target='_blank' href='{{route('admin.projects.edit',$project->id)}}' class='float-right btn btn-primary'>View post</a>
-    </h5>
-
-    <form method='post' action='{{route("admin.projects.update",$project->id)}}'  enctype="multipart/form-data" >
+    <form method='post' action='{{ route('admin.home.sections.update') }}' enctype="multipart/form-data">
 
         @csrf
-        @method("patch")
-        @include("admin.projects.form", ['project' => $project])
+        @method('patch')
+        @include('admin.homepage.form', ['sections' => $sections])
 
-        <input type='submit' class='btn btn-primary' value='Save Changes' >
+        <input type='submit' class='btn btn-primary' value='Save Changes'>
 
     </form>
-
 @endsection

@@ -16,35 +16,35 @@ class PageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the WhoWeArePage.
      */
-    public function about()
+    public function ShowWhoWeArePage()
     {
-        //
+        return view('about.who_are_we');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show the DueDiligencePage
      */
-    public function store(Request $request)
+    public function ShowDueDiligencePage()
     {
-        //
+        return view('about.due_dilligence');
     }
 
     /**
-     * Display the specified resource.
+     * Display the FAQs page
      */
-    public function show(Page $page)
+    public function showFaqsPage()
     {
-        //
+        return view('about.faqs');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the ContactUs page
      */
-    public function edit(Page $page)
+    public function showContactUsPage()
     {
-        //
+        return view('contact.index');
     }
 
     /**

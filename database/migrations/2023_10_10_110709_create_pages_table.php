@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->text('parent');
+            $table->string('name');
+            $table->text('parent')->nullable();
             $table->json('content');
             $table->timestamps();
         });

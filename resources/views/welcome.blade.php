@@ -10,16 +10,16 @@
                         <div class="home-content">
                             <div>
                                 @markSection('intro_title')
-                                <h1>UK Property Investment You Can Bank On</h1>
+                                    <h1>UK Property Investment You Can Bank On</h1>
                                 @endMarkSection
                                 <div class="row">
                                     <div class="col-xl-8">
                                         @markSection('intro_text')
-                                        <p>Baron & Cabot offers simple and profitable UK property investment opportunities
-                                            catering to both seasoned investors and newcomers alike. When you choose to
-                                            partner with us, your property investment in the UK will not only be the optimal
-                                            choice but also your most exceptional choice.</p>
-                                            @endMarkSection
+                                            <p>Baron & Cabot offers simple and profitable UK property investment opportunities
+                                                catering to both seasoned investors and newcomers alike. When you choose to
+                                                partner with us, your property investment in the UK will not only be the optimal
+                                                choice but also your most exceptional choice.</p>
+                                        @endMarkSection
                                     </div>
                                 </div>
                             </div>
@@ -230,8 +230,10 @@
                 <div class="col">
                     <div class="title-2 text-white">
                         <p></p>
-                        <h2>What can Baron & Cabot do for you ?</h2>
-                        <p>Leaders in UK Property Investments</p>
+                        @markSection('what_can_we_do')
+                            <h2>What can Baron & Cabot do for you ?</h2>
+                            <p>Leaders in UK Property Investments</p>
+                        @endMarkSection
                     </div>
                     <ul id="tabs" class="nav nav-tabs">
                         <li class="nav-item"><a href="#" data-bs-target="#morden" data-bs-toggle="tab"
@@ -554,8 +556,9 @@
             <div class="row">
                 <div class="col">
                     <div class="title-1 color-6">
-                        <h2>Property You Can Bank On </h2>
-
+                        @markSection('value_offer_title')
+                            <h2>Property You Can Bank On </h2>
+                        @endMarkSection
                         <hr>
                     </div>
                     <div class="user-about mt-0">
@@ -568,23 +571,25 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="about-content">
-
+@markSection('value_offer_intro')
                                     <p class="mt-3 mb-3">Welcome to Baron & Cabot — your trusted partner in discovering the
                                         most profitable UK property investment opportunities. As a 5-star Trust-rated leader
                                         in the UK property market, we provide many investment opportunities across key
                                         cities, including Manchester, Birmingham, and London. With access to over 4,000
-                                        property investments, we’re proud to offer an impressive volume of UK investment
+                                        property investments, we're proud to offer an impressive volume of UK investment
                                         properties, making us the go-to choice for local and global investors.
                                     </p>
                                     <p>Our impeccable track record in property sourcing speaks volumes about our expertise.
                                         Our past investments have consistently yielded impressive returns, as attested by
-                                        our contented clientele. As an established firm, we’re uniquely positioned to offer
+                                        our contented clientele. As an established firm, we're uniquely positioned to offer
                                         a wide range of opportunities that perfectly align with your financial objectives
                                         for your UK property investment. </p>
+                                        @endMarkSection
                                     <p></p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6">
+                                @markSection('value_offer_1')
                                 <h5>At Baron & Cabot, we believe in the power of research and data-driven decisions.</h5>
                                 <p>Our dedicated team of UK property investment specialists works hard to ensure maximum
                                     returns on your investment. Recognising the significance of well-informed
@@ -603,8 +608,10 @@
                                     invest in property in the UK with you. We ensure you’re comfortable with the basics
                                     before moving forward, making sure you’re comfortable with and understand your
                                     investment strategy. </p>
+                                    @endMarkSection
                             </div>
                             <div class="col-xl-6 col-lg-6 description">
+                                @markSection('value_offer_2')
                                 <h5 class="mt-0 mb-3">We’re here to assist you with practical aspects of property
                                     investment.</h5>
                                 <p>Whether you need help securing a mortgage, managing tenants, or understanding tax
@@ -627,6 +634,7 @@
                                         existing clients or their referrals, testifying to our service quality and
                                         investment value.</li>
                                 </ol>
+                                @endMarkSection
                             </div>
                         </div>
                     </div>
