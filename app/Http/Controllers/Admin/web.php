@@ -24,8 +24,8 @@ Route::get('/', function () {
 Route::get('projects', [ProjectController::class,'index']);
 Route::get('projects/{project}', [ProjectController::class,'show']);
 Route::resource('services', Services::class);
-Route::get('about/who-we-are',[PageController::class,'ShowWhoWeArePage'])->name('about.who-we-are');
-Route::get('about/due-diligence',[PageController::class,'ShowDueDiligencePage'])->name('about.due-diligence');;
+Route::get('about/who-we-are',[PageController::class,showWhoWeArePage])->name('about.who-we-are');
+Route::get('about/due-diligence',[PageController::class,showDueDiligencePage])->name('about.due-diligence');;
 Route::get('about/faqs',[PageController::class,'showFaqsPage'])->name('about.faqs');
 Route::resource('team', Services::class);
 Route::get('contact',[PageController::class,'contact'])->name('about.contact');

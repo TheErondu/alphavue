@@ -4,8 +4,6 @@ use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
-use App\Models\Services;
-use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,13 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('main');
+Route::get('/',[PageController::class,'showHomePage'])->name('main');
 Route::resource('projects', ProjectController::class);
 Route::resource('services', ServicesController::class);
-Route::get('about/who-we-are',[PageController::class,'ShowWhoWeArePage'])->name('about.who-we-are');
-Route::get('about/due-diligence',[PageController::class,'ShowDueDiligencePage'])->name('about.due-diligence');;
+Route::get('about/who-we-are',[PageController::class,'showWhoWeArePage'])->name('about.who-we-are');
+Route::get('about/due-diligence',[PageController::class,'showDueDiligencePage'])->name('about.due-diligence');;
 Route::get('about/faqs',[PageController::class,'showFaqsPage'])->name('about.faqs');
 Route::resource('team', TeamController::class);
 Route::get('contact',[PageController::class,'showContactUsPage'])->name('about.contact');

@@ -10,15 +10,17 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function contact()
+    public function showHomePage()
     {
-        //
+        $data = Page::where('name','Home')->first();
+        $homePageData = json_decode($data->content);
+        return view('welcome', compact('homePageData'));
     }
 
     /**
      * Show the WhoWeArePage.
      */
-    public function ShowWhoWeArePage()
+    public function showWhoWeArePage()
     {
         return view('about.who_are_we');
     }
@@ -26,7 +28,7 @@ class PageController extends Controller
     /**
      * Show the DueDiligencePage
      */
-    public function ShowDueDiligencePage()
+    public function showDueDiligencePage()
     {
         return view('about.due_dilligence');
     }

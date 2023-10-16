@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Services\CustomHtmlParser;
 use DOMDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -30,20 +31,7 @@ class HomeController extends Controller
 
     public function index(Request $request): ViewContract
     {
-        // Read the Blade view and capture the HTML content
-        $htmlContent = view('welcome')->render();
-        libxml_use_internal_errors(true);
-        // Parse the HTML content to extract marked sections
-        $sections = [];
-        $doc = new DOMDocument;
-        //dd($htmlContent);
-        $doc->loadHTML($htmlContent);
-        $sectionsElements = $doc->getElementsByTagName('div'); // Use the custom element, e.g., 'div'
-        foreach ($sectionsElements as $element) {
-            $sectionIdentifier = $element->getAttribute('data-section');
-            $sectionContent = $doc->saveHTML($element);
-            $sections[$sectionIdentifier] = $sectionContent;
-        }
+        $sections = CustomHtmlParser::getPageSections(pageName:'Home',view:'welcome');
 
         // Pass the sections to the view
         return view('admin.homepage.edit', ['sections' => $sections]);
