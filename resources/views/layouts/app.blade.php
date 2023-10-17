@@ -192,7 +192,7 @@
 <body>
 
     <!-- header start -->
-    @include('layouts.header')
+    @include('layouts.header', ['useFixedHeader' => false])
     @if (!Route::is('main'))
         @include('layouts.breadcrumbs')
     @endif

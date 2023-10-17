@@ -12,9 +12,9 @@ class PageController extends Controller
      */
     public function showHomePage()
     {
-        $data = Page::where('name','Home')->first();
-        $homePageData = json_decode($data->content);
-        return view('welcome', compact('homePageData'));
+        $data = Page::where('name', 'Home')->first();
+        $pageData = json_decode($data->content);
+        return view('welcome', compact('pageData'));
     }
 
     /**
