@@ -73,5 +73,12 @@ class Project extends Model
     {
         return route("binshopsblog.single", $this->slug);
     }
+    /**
+ * Get the route key for the model.
+ */
+public function getRouteKeyName(): string
+{
+    return 'slug';
+}
 
 }

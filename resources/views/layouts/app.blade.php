@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -361,7 +362,7 @@
             //    });
             // },
 
-            utilsScript: "https://baroncabot.com/assets/js/intl-tel-input-master/build/js/utils.js",
+            utilsScript: "/assets/js/intl-tel-input-master/build/js/utils.js",
         });
 
         var reset = function() {

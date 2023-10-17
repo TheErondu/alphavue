@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class SettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $projects = Project::all();
-        return view('projects.index', compact('projects'));
+        //
     }
 
     /**
@@ -35,18 +34,15 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show(Settings $settings)
     {
-        $project = Project::where('slug', $project->slug)->first();
-        $images = json_decode($project->project_images);
-        //dd($images);
-        return view('projects.show', compact('project', 'images'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(Settings $settings)
     {
         //
     }
@@ -54,7 +50,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Settings $settings)
     {
         //
     }
@@ -62,7 +58,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(Settings $settings)
     {
         //
     }
